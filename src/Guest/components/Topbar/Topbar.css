@@ -1,0 +1,57 @@
+.Topbar {
+  background-color: #f5f0f0;
+  border-bottom: 2px solid #e5e5eb;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5rem;
+  z-index: 2;
+}
+
+.Brand-Logo {
+  padding: 0.5rem;
+}
+
+.Brand-Logo a img {
+  height: 3rem;
+}
+
+.Topbar-Nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+}
+
+.Topbar-Nav .Nav {
+  display: flex;
+  justify-content: start;
+  margin: 0 1rem;
+}
+
+.Topbar-Nav .Nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between; /* Adjusted property */
+}
+
+.Topbar-Nav .Nav ul li {
+  padding: 0.5rem 1rem;
+}
+
+.Topbar-Nav .Nav.Account ul li {
+  background-color: var(--clr-red);
+  margin: 0.7rem;
+  border-radius: 0.6rem;
+}
+.Topbar-Nav .Nav.Account ul li a {
+  color: #e5e5eb;
+}
+
+.Topbar-Nav ul li a {
+  color: var(--clr-text);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+

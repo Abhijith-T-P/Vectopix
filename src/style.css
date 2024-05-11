@@ -1,0 +1,16 @@
+:root{
+  --clr-white:#f2f2fe;
+  --clr-0ff-white:#f5f0f0;
+  --clr-bdr:#8A6161;
+  --clr-red:#ed1212;
+  --clr-text:#1c0d0d;
+  --clr-Shadow:#e5e5eb;
+
+}
+* {
+  user-select: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+      } 

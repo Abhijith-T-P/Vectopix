@@ -1,0 +1,30 @@
+.Footer {
+  border-top: 2px solid var(--clr-Shadow);
+  background-color: var(--clr-0ff-white);
+}
+.Footer .Footer-Container .Footer-Link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Footer .Footer-Container .Footer-Link ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  flex: 1;
+}
+.Footer .Footer-Container .Footer-Link ul li {
+  padding: 2rem 4rem;
+}
+.Footer .Footer-Container .Footer-Link ul li a {
+  text-decoration: none;
+  color: var(--clr-text);
+}
+.Footer .Footer-Container .Footer-Copy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Footer .Footer-Container .Footer-Copy span {
+  padding: 2rem;
+}

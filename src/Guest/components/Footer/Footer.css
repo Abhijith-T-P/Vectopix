@@ -1,6 +1,7 @@
 .Footer {
   border-top: 2px solid var(--clr-Shadow);
   background-color: var(--clr-0ff-white);
+  box-sizing: inherit;
 }
 .Footer .Footer-Container .Footer-Link {
   display: flex;

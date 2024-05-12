@@ -8,9 +8,10 @@ import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
-    <div>
+    <div className="App">
 
     <Topbar/>
+    <div className="App-Content">
 
     <Routes>
       <Route path="/" element={<Index/>} />
@@ -19,6 +20,7 @@ const App = () => {
       
 
     </Routes>
+    </div>
     <Footer/>
     </div>
   );

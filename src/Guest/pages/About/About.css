@@ -1,0 +1,29 @@
+.About{
+    padding: 2rem 8rem;
+    margin-top: 2rem;
+}
+.About-Card{
+    display: flex;
+}
+.About .About-Container .About-Card .About-Text h1,h2 {
+    padding-left: 1rem;
+    font-size: 2.4em;
+    color: var(--clr-text);
+}
+.About .About-Container .About-Card .About-Text h1 {
+    font-size: 3rem;
+}
+.About .About-Container .About-Card .About-Text{
+    text-align: justify;
+}
+.About .About-Container .About-Card .About-Text p {
+
+    padding: 1.3rem;
+    font-size: 1.1em;
+}
+.About .About-Container .About-Card .About-Img img{
+    height:  20rem;
+    mix-blend-mode: multiply;
+    position: relative;
+    bottom: 2rem;
+}

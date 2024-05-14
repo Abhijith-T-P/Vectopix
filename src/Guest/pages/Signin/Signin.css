@@ -42,7 +42,7 @@
   
   .Signin-Container button {
     padding: 0.5rem;
-    background-color: #007bff;
+    background-color:var(--clr-red);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -50,6 +50,6 @@
   }
   
   .Signin-Container button:hover {
-    background-color: #0056b3;
+    border: 2px solid var(--clr-Shadow);
   }
   

@@ -32,10 +32,14 @@
   font-size: 2.5em;
   padding: 5rem;
 }
+.Index .Hero .Hero-Text h1{
+  color: var(--clr-red);
+}
 
 .Index .Hero .Hero-Text span {
   color: var(--clr-text);
   font-size: 1.5rem;
+  
 }
 .Why {
   padding: 1rem 5rem;
@@ -173,7 +177,7 @@
 }
 
 /* Styles for small screens (mobile devices) */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 690px) {
   * {
     margin: 0 1rem;
   }

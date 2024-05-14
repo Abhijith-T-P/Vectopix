@@ -7,6 +7,7 @@
   --clr-Shadow: #e5e5eb;
 }
 * {
+  color: var(--clr-text);
   user-select: none;
   box-sizing: border-box;
   margin: 0;

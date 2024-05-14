@@ -1,6 +1,10 @@
 .Courses {
   padding: 0px 7rem;
   margin-bottom: 3rem;
+  margin-top: 4rem;
+}
+.Courses .Courses-Text h1{
+  color: var(--clr-red);
 }
 .Courses .Courses-Container .Courses-Grid .Course-Card {
   background-color: var(--clr-0ff-white);

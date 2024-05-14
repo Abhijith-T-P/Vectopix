@@ -61,7 +61,7 @@ const Topbar = () => {
           <ul>
             <li>
               <div className="Sign-In">
-                <NavLink to="../Signin">Sign in</NavLink>
+                <NavLink to="../">Sign in</NavLink>
               </div>
             </li>
             <li>

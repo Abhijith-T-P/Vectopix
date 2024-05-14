@@ -1,0 +1,166 @@
+.UserTopbar {
+    background-color: #f5f0f0;
+    border-bottom: 2px solid #e5e5eb;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5rem;
+    z-index: 2;
+  }
+  
+  .UserBrand-Logo {
+    padding: 0.5rem;
+  }
+  
+  .UserBrand-Logo a img {
+    height: 3rem;
+  }
+  
+  .UserTopbar-Nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .UserTopbar-Nav .UserNav {
+    display: flex;
+    justify-content: start;
+    margin: 0 1rem;
+  }
+  
+  .UserTopbar-Nav .UserNav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+  }
+  
+  .UserTopbar-Nav .UserNav ul a {
+    color: var(--clr-white);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  .UserTopbar-Nav .UserNav ul a svg {
+    fill: var(--clr-text);
+    background-color: transparent;
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  .UserTopbar-Nav .UserNav ul a.active svg {
+    fill: var(--clr-red);
+  }
+  
+  .UserTopbar-Nav .UserNav ul li {
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .UserTopbar-Nav .UserNav.Account ul li {
+    background-color: var(--clr-red);
+    margin: 0.7rem;
+    border-radius: 0.6rem;
+  }
+  
+  .UserTopbar-Nav ul li a:active {
+    color: var(--clr-red);
+  }
+  
+  .UserHamburger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .UserHamburger-Line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--clr-red);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .UserHamburger-Line.open:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .UserHamburger-Line.open:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .UserHamburger-Line.open:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /* Styles for medium screens (tablets) */
+  @media screen and (max-width: 1030px) {
+    .UserTopbar {
+      padding: 0 2rem;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .UserTopbar-Nav {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #f5f0f0;
+      padding: 1rem;
+      display: none;
+    }
+  
+    .UserTopbar-Nav.open {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .UserTopbar-Nav .UserNav {
+      margin: 0.5rem 0;
+    }
+  
+    .UserTopbar-Nav .UserNav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .UserTopbar-Nav .UserNav ul li {
+      padding: 0.3rem 0.5rem;
+    }
+  
+    .UserTopbar-Nav .UserNav.Account ul li {
+      margin: 0.5rem;
+    }
+  
+    .UserHamburger {
+      display: block;
+      margin-right: 1rem;
+    }
+  }
+  
+  /* Styles for small screens (mobile devices) */
+  @media screen and (max-width: 576px) {
+    .UserTopbar {
+      padding: 0 1rem;
+    }
+  
+    .UserBrand-Logo a img {
+      height: 2rem;
+    }
+  
+    .UserTopbar-Nav .UserNav ul li {
+      padding: 0.2rem 0.3rem;
+      font-size: 0.9rem;
+    }
+  
+    .UserTopbar-Nav .UserNav.Account ul li {
+      margin: 0.3rem;
+      font-size: 0.9rem;
+    }
+  }

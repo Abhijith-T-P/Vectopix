@@ -2,6 +2,18 @@
   margin-top: 1rem;
   padding: 0px 8rem;
 }
+.Contact h1,h3{
+  color: var(--clr-red);
+}
+.Contact .Contact-Heading h1{
+  font-size: 5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.Contact .Contact-message {
+  padding-left: 1rem;
+  padding-bottom: 3rem;
+}
 .Contact .Contact-Container {
   display: flex;
 }
@@ -9,6 +21,7 @@
 .Contact .Contact-Container .Contact-Form {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
   flex: 1;
 }
 .Contact .Contact-Container .Contact-Form input,
@@ -34,7 +47,111 @@ textarea:focus,
   border-radius: 0.7rem;
   border: none;
   margin: 1rem;
+
 }
-.Contact .Contact-Containe .Contact-Detail {
-  
+.Contact .Contact-Container .Contact-Form .Form-Btn button:hover {
+  border: 2px solid var(--clr-Shadow);
+
+}
+
+.Contact .Contact-Container .Contact-Detail{
+  text-align: end;
+  background-color: var(--clr-0ff-white);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 3rem;
+}
+.Contact .Contact-Container .Contact-Detail h3{
+  font-size: 3rem;
+}
+.Contact .Contact-Container .Contact-Detail ul{
+  list-style: none;
+}
+.Contact .Contact-Container .Contact-Detail ul li {
+  padding: .5rem;
+  font-weight: 500;
+}
+.Contact .Contact-Container .Contact-Detail ul li a{
+  color: var(--clr-text);
+  text-decoration: none;
+}
+.Contact .Contact-Container .Contact-Detail ul li a:hover{
+  color: var(--clr-red);
+}
+
+/* Styles for medium screens (tablets) */
+@media screen and (max-width: 1330px) {
+  .Contact {
+    padding: 0 4rem;
+  }
+
+  .Contact .Contact-Heading h1 {
+    font-size: 3rem;
+  }
+
+  .Contact .Contact-Container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Contact .Contact-Container .Contact-Form {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .Contact .Contact-Container .Contact-Detail {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .Contact .Contact-Container .Contact-Detail h3 {
+    font-size: 2rem;
+  }
+
+  .Contact .Contact-Container .Contact-Detail .Contact-Map {
+    display: flex;
+    justify-content: center;
+  }
+
+  .Contact .Contact-Container .Contact-Detail .Contact-Map iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+  }
+}
+
+/* Styles for small screens (mobile devices) */
+@media screen and (max-width: 576px) {
+  .Contact {
+    padding: 0 2rem;
+  }
+
+  .Contact .Contact-Heading h1 {
+    font-size: 2rem;
+  }
+
+  .Contact .Contact-Container .Contact-Form input,
+  .Contact .Contact-Container .Contact-Form textarea {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+    margin: 0.5rem;
+  }
+
+  .Contact .Contact-Container .Contact-Form .Form-Btn button {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+    margin: 0.5rem;
+  }
+
+  .Contact .Contact-Container .Contact-Detail h3 {
+    font-size: 1.5rem;
+  }
+
+  .Contact .Contact-Container .Contact-Detail ul li {
+    font-size: 0.9rem;
+  }
+
+  .Contact .Contact-Container .Contact-Detail .Contact-Map iframe {
+    height: 200px;
+  }
 }

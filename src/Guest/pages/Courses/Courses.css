@@ -1,0 +1,128 @@
+.Courses {
+  padding: 0px 7rem;
+  margin-bottom: 3rem;
+}
+.Courses .Courses-Container .Courses-Grid .Course-Card {
+  background-color: var(--clr-0ff-white);
+  margin: 1rem;
+  padding: 1.3rem;
+  border-radius: 0.7rem;
+  border: 1px solid var(--clr-Shadow);
+}
+.Courses .Courses-Container .Courses-Grid {
+  margin-top: 2rem;
+}
+.Courses .Courses-Container .Courses-Search{
+    margin-top: 1rem;
+}
+
+.Courses .Courses-Container .Courses-Search input {
+  font-size: 1.3rem;
+  margin: 10px;
+  padding: 0.5rem;
+  border: 1px solid var(--clr-red);
+  border-radius: 0.7rem;
+}
+.Courses .Courses-Container .Courses-Search input:focus {
+  outline: none;
+}
+.Courses .Courses-Container .Courses-Search label {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.Courses .Courses-Container .Courses-Grid .Course-Card .Course-Image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Courses .Courses-Container .Courses-Grid .Course-Card .Course-Image img {
+  height: 20rem;
+
+  aspect-ratio: 1;
+  mix-blend-mode: multiply;
+}
+.Courses .Courses-Container .Courses-Grid .Course-Card .Course-Detail h3 {
+  padding: 0.5rem 0rem;
+}
+.Courses .Courses-Container .Courses-Grid .Course-Card .Course-Detail p {
+  text-align: justify;
+  padding-bottom: 0.7rem;
+}
+.Courses .Courses-Container .Courses-Grid .Course-Card .Course-Detail button {
+  padding: 1rem;
+  background-color: var(--clr-red);
+  color: var(--clr-white);
+  border: none;
+  border-radius: 0.7rem;
+}
+.Courses
+  .Courses-Container
+  .Courses-Grid
+  .Course-Card
+  .Course-Detail
+  .Know-Btn {
+  display: flex;
+  flex: 1;
+  justify-content: end;
+}
+/* Styles for medium screens (tablets) */
+@media screen and (max-width: 992px) {
+  .Courses {
+    padding: 0 4rem;
+  }
+
+  .Courses .Courses-Container .Courses-Grid .Course-Card {
+    padding: 1rem;
+  }
+
+  .Courses .Courses-Container .Courses-Grid .Course-Card .Course-Image img {
+    height: 15rem;
+  }
+
+  .Courses .Courses-Container .Courses-Grid .Course-Card .Course-Detail h3 {
+    font-size: 1.2rem;
+  }
+
+  .Courses .Courses-Container .Courses-Grid .Course-Card .Course-Detail p {
+    font-size: 0.9rem;
+  }
+
+  .Courses .Courses-Container .Courses-Grid .Course-Card .Course-Detail button {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Styles for small screens (mobile devices) */
+@media screen and (max-width: 576px) {
+  .Courses {
+    padding: 0 2rem;
+  }
+
+  .Courses .Courses-Container .Courses-Grid .Course-Card {
+    padding: 0.8rem;
+  }
+
+  .Courses .Courses-Container .Courses-Grid .Course-Card .Course-Image img {
+    height: 12rem;
+  }
+
+  .Courses .Courses-Container .Courses-Grid .Course-Card .Course-Detail h3 {
+    font-size: 1rem;
+  }
+
+  .Courses .Courses-Container .Courses-Grid .Course-Card .Course-Detail p {
+    font-size: 0.8rem;
+  }
+
+  .Courses .Courses-Container .Courses-Grid .Course-Card .Course-Detail button {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .Courses .Courses-Container .Courses-Search input,
+  .Courses .Courses-Container .Courses-Search label {
+    font-size: 1rem;
+  }
+}

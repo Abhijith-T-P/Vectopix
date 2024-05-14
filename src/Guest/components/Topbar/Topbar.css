@@ -43,15 +43,206 @@
   margin: 0.7rem;
   border-radius: 0.6rem;
 }
-.Topbar-Nav .Nav.Account ul li a {
-  color: #e5e5eb;
-}
+
 
 .Topbar-Nav ul li a {
-  color: var(--clr-text);
+  color: var(--clr-white);
   text-decoration: none;
   font-size: 1rem;
   font-weight: bold;
+  
+}
+.Topbar-Nav ul li a:active{
+  color: var(--clr-red);
+}
+/* Styles for medium screens (tablets) */
+@media screen and (max-width: 992px) {
+  .Topbar {
+    padding: 0 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Topbar-Nav {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .Topbar-Nav .Nav {
+    margin: 0.5rem 0;
+  }
+
+  .Topbar-Nav .Nav ul {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .Topbar-Nav .Nav ul li {
+    padding: 0.3rem 0.5rem;
+  }
+
+  .Topbar-Nav .Nav.Account ul li {
+    margin: 0.5rem;
+  }
+}
+
+/* Styles for small screens (mobile devices) */
+@media screen and (max-width: 576px) {
+  .Topbar {
+    padding: 0 1rem;
+  }
+
+  .Brand-Logo a img {
+    height: 2rem;
+  }
+  .Topbar {
+    background-color: #f5f0f0;
+    border-bottom: 2px solid #e5e5eb;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5rem;
+    z-index: 2;
+  }
+  
+  .Brand-Logo {
+    padding: 0.5rem;
+  }
+  
+  .Brand-Logo a img {
+    height: 3rem;
+  }
+  
+  .Topbar-Nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .Topbar-Nav .Nav {
+    display: flex;
+    justify-content: start;
+    margin: 0 1rem;
+  }
+  
+  .Topbar-Nav .Nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between; /* Adjusted property */
+  }
+  
+  .Topbar-Nav .Nav ul li {
+    padding: 0.5rem 1rem;
+  }
+  
+  .Topbar-Nav .Nav.Account ul li {
+    background-color: var(--clr-red);
+    margin: 0.7rem;
+    border-radius: 0.6rem;
+  }
+  
+  .Topbar-Nav ul li a {
+    color: var(--clr-white);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .Topbar-Nav ul li a:active {
+    color: var(--clr-red);
+  }
+  
+  .Hamburger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .Hamburger-Line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--clr-red);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .Hamburger-Line.open:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .Hamburger-Line.open:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .Hamburger-Line.open:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /* Styles for medium screens (tablets) */
+  @media screen and (max-width: 992px) {
+    .Topbar {
+      padding: 0 2rem;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .Topbar-Nav {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #f5f0f0;
+      padding: 1rem;
+      display: none;
+    }
+   
+  
+    .Topbar-Nav.open {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .Topbar-Nav .Nav {
+      margin: 1rem 0;
+    }
+  
+    .Hamburger {
+      display: block;
+      margin-right: 1rem;
+    }
+  }
+  
+  /* Styles for small screens (mobile devices) */
+  @media screen and (max-width: 576px) {
+    .Topbar {
+      padding: 0 1rem;
+    }
+  
+    .Brand-Logo a img {
+      height: 2rem;
+    }
+  
+    .Topbar-Nav .Nav ul li {
+      padding: 0.2rem 0.3rem;
+      font-size: 0.9rem;
+    }
+  
+    .Topbar-Nav .Nav.Account ul li {
+      margin: 0.3rem;
+      font-size: 0.9rem;
+    }
+  }
+  .Topbar-Nav .Nav ul li {
+    padding: 0.2rem 0.3rem;
+    font-size: 0.9rem;
+  }
+
+  .Topbar-Nav .Nav.Account ul li {
+    margin: 0.3rem;
+    font-size: 0.9rem;
+  }
 }
 
 

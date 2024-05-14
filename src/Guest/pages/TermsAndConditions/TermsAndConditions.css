@@ -1,0 +1,59 @@
+.TermsAndConditions {
+    padding: 0px 7rem;
+    margin-bottom: 3rem;
+  }
+  
+  .TermsAndConditions .content {
+    background-color: var(--clr-0ff-white);
+    margin: 1rem;
+    padding: 1.3rem;
+    border-radius: 0.7rem;
+    border: 1px solid var(--clr-Shadow);
+  }
+  
+  .TermsAndConditions .content h2 {
+    margin-top: 2rem;
+  }
+  
+  .TermsAndConditions .content h3 {
+    margin-top: 1.5rem;
+  }
+  
+  .TermsAndConditions .content p {
+    margin-bottom: 1rem;
+  }
+  
+  .TermsAndConditions .content ul {
+    margin-bottom: 1rem;
+  }
+  
+  .TermsAndConditions .content ul li {
+    margin-left: 2rem;
+  }
+  
+  .TermsAndConditions .content ul li::marker {
+    color: var(--clr-red);
+  }
+  
+  .TermsAndConditions .content a {
+    color: var(--clr-red);
+    text-decoration: underline;
+  }
+  
+  .TermsAndConditions .content a:hover {
+    color: var(--clr-red);
+    text-decoration: none;
+  }
+  
+  .TermsAndConditions .content iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .TermsAndConditions {
+      padding: 0px 2rem;
+    }
+  }
+  

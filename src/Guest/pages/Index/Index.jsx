@@ -32,7 +32,7 @@ const Index = () => {
           </p>
         </div>
         <div className="Cources-Btn">
-          <Link>Explore cources</Link>
+          <Link to="../Courses">Explore cources</Link>
         </div>
         <div className="Why-Card">
           <Grid container spacing={2}>
@@ -103,7 +103,7 @@ const Index = () => {
           </div>
 
           <div className="Cources-Btn">
-          <Link>Contact now !</Link>
+          <Link to="../Contact">Contact now !</Link>
         </div>
         </div>
       </div>

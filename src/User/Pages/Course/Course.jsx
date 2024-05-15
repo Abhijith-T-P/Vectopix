@@ -18,7 +18,7 @@ const Course = () => {
             <div className="Card Course-Card">
               <div className="Course-Title">
                 <div className="Title-Img">
-                  <img src={image} alt="Course Image" />
+                  <img src={image} alt="CourseImage" />
                 </div>
                 <div className="Title-Text">
                   <h3>Computer Hardware</h3>

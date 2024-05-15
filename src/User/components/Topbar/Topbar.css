@@ -1,8 +1,8 @@
 
 
 .UserTopbar {
-  background-color: var(--clr-off-white);
-  border-bottom: 2px solid var(--clr-shadow);
+  background-color: var(--clr-0ff-white);
+  border-bottom: 2px solid var(--clr-Shadow);
   display: flex;
   justify-content: space-between;
   padding: 0 5rem;

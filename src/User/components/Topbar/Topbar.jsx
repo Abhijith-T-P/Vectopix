@@ -43,9 +43,13 @@ const Topbar = () => {
       <div className={`UserTopbar-Nav ${isMenuOpen ? "open" : ""}`}>
         <div className="UserNav path">
           <ul>
-            <li>
+          <li>
               <NavLink style={navStyle} to="../User/Dashboard">
                 Dashboard
+              </NavLink>
+            </li><li>
+              <NavLink style={navStyle} to="../User/Attendance">
+                Attendance
               </NavLink>
             </li>
             <li>

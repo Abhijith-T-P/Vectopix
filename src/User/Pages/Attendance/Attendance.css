@@ -1,0 +1,95 @@
+/* Attendance.css */
+
+.AttendancePage {
+    padding: 1rem 5rem;
+  }
+  
+  .AttendancePage-Container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .AttendancePage-Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .Back-Btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--clr-red);
+    color: var(--clr-white);
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  
+  .AttendancePage-Content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .Attendance-Overview {
+    background-color: var(--clr-0ff-white);
+    padding: 1rem;
+    border: 1px solid var(--clr-bdr);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .Overview-Details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .Attendance-Records {
+    background-color: var(--clr-0ff-white);
+    padding: 1rem;
+    border: 1px solid var(--clr-bdr);
+    border-radius: 0.5rem;
+  }
+  
+  .Records-Table {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .Records-Table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .Records-Table th,
+  .Records-Table td {
+    padding: 0.75rem;
+    border: 1px solid var(--clr-bdr);
+    text-align: left;
+  }
+  
+  .Records-Table th {
+    background-color: var(--clr-Shadow);
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 767px) {
+    .AttendancePage {
+      padding: 1rem;
+    }
+  
+    .AttendancePage-Header {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+  
+    .Back-Btn {
+      margin-bottom: 0.5rem;
+    }
+  
+    .AttendancePage-Content {
+      flex-direction: column;
+    }
+  }
+  

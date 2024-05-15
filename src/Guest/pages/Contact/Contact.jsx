@@ -38,7 +38,7 @@ const Contact = () => {
               </Link>
             </li>
             <li>
-              <Link to="tel:+91 9447539122 ">+91 123456789</Link>
+              <Link to="tel:+91 9447539122 ">+91 9447 53 9122</Link>
             </li>{" "}
             <li>
               <Link to="https://wa.me/9562538473 " target="_blank">

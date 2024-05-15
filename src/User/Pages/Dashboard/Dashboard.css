@@ -1,10 +1,162 @@
-.Dashboard{
-    padding: 1rem 7rem;
+/* Base styles */
+.Dashboard {
+  padding: 1rem; /* Default padding for the page */
 }
-.Dashboard .Dashboard-Container .Dashboard-Content .Content-Card{
-    display: flex;
-    
+
+.Dashboard-Container {
+  display: flex;
+  flex-direction: column;
 }
-.Dashboard .Dashboard-Container .Dashboard-Content .Content-Card .Card{
-    margin: 1rem;
+
+.Dashboard-Content {
+  display: flex;
+  flex-direction: column;
+}
+
+.User-Hi h2 {
+  color: var(--clr-text);
+}
+
+.Content-Card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -0.5rem; /* Compensate for the padding */
+}
+
+.Content-Card .Card {
+  margin: 0.5rem; /* Add margin to each card */
+  flex-basis: calc(50% - 1rem); /* Two cards per row on larger screens */
+  background-color: var(--clr-0ff-white);
+  padding: 1rem;
+  border: 2px solid var(--clr-Shadow);
+  border-radius: 0.5rem;
+}
+
+.Card .More-Btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Card .More-Btn a {
+  text-decoration: none;
+  color: var(--clr-white);
+  padding: 0.5rem 1rem;
+  background-color: var(--clr-red);
+  border-radius: 0.5rem;
+}
+
+/* Attendance Card styles */
+.Attendance-Card {
+  background-color: var(--clr-0ff-white);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.Attendance-Title h2 {
+  margin: 0;
+}
+
+.Attendance-Percentage {
+  display: flex;
+  flex-direction: column;
+}
+
+.Attendance-Percentage span {
+  font-size: 8rem;
+  color: var(--clr-text);
+  margin-left: 1rem;
+}
+
+.Attendance-Percentage .Class-Count {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.Attendance-Percentage .Class-Count span {
+  font-size: 1.4rem;
+}
+
+/* Course Card styles */
+.Course-Card {
+  background-color: var(--clr-0ff-white);
+  padding: 1rem;
+  border: 1px solid var(--clr-bdr);
+  border-radius: 0.5rem;
+}
+
+.Course-Title {
+  display: flex;
+  flex-direction: column;
+}
+
+.Title-HomeImg img {
+  mix-blend-mode: multiply;
+  height: 15rem;
+}
+
+.Title-Text h3 {
+  margin: 0;
+}
+
+.Course-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+.Course-JoinDate {
+  color: var(--clr-text);
+}
+
+.Course-Lessions {
+  display: flex;
+  align-items: center;
+}
+
+.Course-Lessions svg {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+
+.Course-Lessions span {
+  color: var(--clr-text);
+}
+
+.Course-Progress {
+  width: 100%;
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid black;
+  margin: 1rem 0px;
+}
+
+.Progress-Bar {
+  height: 100%;
+  background-color: var(--clr-red);
+  transition: width 2s ease;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .Content-Card .Card {
+    flex-basis: calc(100% - 1rem); /* One card per row on smaller screens */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .Dashboard {
+    padding: 0.5rem; /* Adjusted padding for smaller screens */
+  }
+
+  .Content-Card .Card {
+    margin: 0.5rem; /* Adjusted margin for smaller screens */
+    flex-basis: calc(100% - 1rem); /* One card per row on even smaller screens */
+  }
 }

@@ -1,0 +1,71 @@
+/* Profile.css */
+
+.Profile {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+  
+  .Profile-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .Profile-Header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .Profile-Image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .Profile-Details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .Detail-Card {
+    background-color: var(--clr-0ff-white);
+    padding: 1rem;
+    border: 1px solid var(--clr-bdr);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .Detail-Card h3 {
+    margin-top: 0;
+    color: var(--clr-text);
+  }
+  
+  .Detail-Card p {
+    margin: 0.5rem 0;
+    color: var(--clr-text);
+  }
+  
+  .Settings-Btn {
+    background-color: var(--clr-red);
+    color: var(--clr-white);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
+  
+  .Settings-Btn:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+  
+  /* Responsive styles */
+  @media screen and (min-width: 768px) {
+    .Profile {
+      padding: 1rem 7rem; /* Adjust padding for larger screens */
+    }
+  }
+  

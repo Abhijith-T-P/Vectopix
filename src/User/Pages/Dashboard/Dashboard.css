@@ -1,0 +1,10 @@
+.Dashboard{
+    padding: 1rem 7rem;
+}
+.Dashboard .Dashboard-Container .Dashboard-Content .Content-Card{
+    display: flex;
+    
+}
+.Dashboard .Dashboard-Container .Dashboard-Content .Content-Card .Card{
+    margin: 1rem;
+}

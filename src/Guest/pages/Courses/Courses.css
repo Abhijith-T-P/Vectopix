@@ -24,7 +24,6 @@
   font-size: 1.3rem;
   margin: 10px;
   padding: 0.5rem;
-  border: 1px solid var(--clr-red);
   border-radius: 0.7rem;
 }
 .Courses .Courses-Container .Courses-Search input:focus {
@@ -42,8 +41,6 @@
 }
 .Courses .Courses-Container .Courses-Grid .Course-Card .Course-Image img {
   height: 20rem;
-
-  aspect-ratio: 1;
   mix-blend-mode: multiply;
 }
 .Courses .Courses-Container .Courses-Grid .Course-Card .Course-Detail h3 {

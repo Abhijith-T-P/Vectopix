@@ -28,9 +28,7 @@ const EditProfile = () => {
   return (
     <div className="EditProfile">
       <div className="EditProfile-Container">
-      <Link to="../Dashboard">
-            <button className="Back-Btn">Back to Dashboard</button>
-          </Link>
+     
         <h2>Edit Profile</h2>
         <form onSubmit={handleSubmit} className="EditProfile-Form">
           <div className="Form-Group">
@@ -90,6 +88,9 @@ const EditProfile = () => {
             <button type="submit" className="Save-Btn">
               Save Changes
             </button>
+            <Link to="../Profile">
+            <button className="Back-Btn">Back to prpfile</button>
+          </Link>
             <button type="button" className="Cancel-Btn" onClick={() => console.log('Cancel Edit')}>
               Cancel
             </button>

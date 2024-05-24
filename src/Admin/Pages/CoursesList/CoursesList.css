@@ -1,0 +1,51 @@
+/* CoursesList.css */
+.courses-list {
+    padding: 1rem;
+  }
+  
+  .courses-list h2 {
+    color: var(--clr-red);
+    margin-bottom: 1rem;
+  }
+  
+  .courses-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .course-card {
+    background-color: var(--clr-0ff-white);
+    border: 1px solid var(--clr-bdr);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .course-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .course-card h3 {
+    color: var(--clr-text);
+    margin-bottom: 0.5rem;
+  }
+  
+  .course-card p {
+    color: var(--clr-text);
+    margin-bottom: 0.5rem;
+  }
+  
+  .course-card button {
+    background-color: var(--clr-red);
+    color: var(--clr-white);
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  

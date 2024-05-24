@@ -1,0 +1,30 @@
+/* Topbar.css */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-red);
+    color: var(--clr-white);
+    padding: 1rem;
+  }
+  
+  .topbar-left h1 {
+    margin: 0;
+  }
+  
+  .topbar-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .topbar-nav ul li {
+    margin-left: 1rem;
+  }
+  
+  .topbar-nav ul li a {
+    color: var(--clr-white);
+    text-decoration: none;
+  }
+  

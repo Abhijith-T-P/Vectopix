@@ -13,23 +13,19 @@ import Register from "./pages/Register/Register";
 const App = () => {
   return (
     <div className="App">
-
-    <Topbar/>
-    <div className="App-Content">
-
-    <Routes>
-      <Route path="/" element={<Index/>} />
-      <Route path="/About" element={<About/>} />
-      <Route path="/Contact" element={<Contact/>} />  
-      <Route path="/Courses" element={<Courses/>} />
-      <Route path="/Terms&Conditions" element={<TermsAndConditions/>} />
-      <Route path="/Signin" element={<Signin/>} />
-      <Route path="/Register" element={<Register/>} />
-        
-
-    </Routes>
-    </div>
-    <Footer/>
+      <Topbar />
+      <div className="App-Content">
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/Courses" element={<Courses />} />
+          <Route path="/Terms&Conditions" element={<TermsAndConditions />} />
+          <Route path="/Signin" element={<Signin />} />
+          <Route path="/Register" element={<Register />} />
+        </Routes>
+      </div>
+      <Footer />
     </div>
   );
 };

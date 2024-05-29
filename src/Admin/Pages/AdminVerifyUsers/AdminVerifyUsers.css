@@ -1,0 +1,86 @@
+
+.AdminVerifyUsers {
+    padding: 2rem 5rem;
+  }
+  
+  .AdminVerifyUsers-Container {
+    background-color: var(--clr-white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--clr-text);
+  }
+  
+  .Users-Table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+  }
+  
+  .Users-Table th,
+  .Users-Table td {
+    padding: 1rem;
+    border: 1px solid var(--clr-bdr);
+    text-align: left;
+    color: var(--clr-text);
+  }
+  
+  .Users-Table th {
+    background-color: var(--clr-Shadow);
+  }
+  
+  .Users-Table td {
+    background-color: var(--clr-0ff-white);
+  }
+  
+  .Verify-Btn,
+  .Reject-Btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .Verify-Btn {
+    background-color: var(--clr-red);
+    color: var(--clr-white);
+  }
+  
+  .Reject-Btn {
+    background-color: #555;
+    color: var(--clr-white);
+  }
+  
+  .Verify-Btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .Verified-Text {
+    font-weight: bold;
+    color: green;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .AdminVerifyUsers {
+      padding: 1rem;
+    }
+  
+    .AdminVerifyUsers-Container {
+      padding: 1rem;
+    }
+  
+    .Users-Table th,
+    .Users-Table td {
+      padding: 0.5rem;
+    }
+  }
+  

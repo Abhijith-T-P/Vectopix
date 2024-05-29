@@ -9,6 +9,7 @@ import Courses from "./pages/Courses/Courses";
 import TermsAndConditions from "./pages/TermsAndConditions/TermsAndConditions";
 import Signin from "./pages/Signin/Signin";
 import Register from "./pages/Register/Register";
+import NotFound from "../404";
 
 const App = () => {
   return (
@@ -23,6 +24,8 @@ const App = () => {
           <Route path="/Terms&Conditions" element={<TermsAndConditions />} />
           <Route path="/Signin" element={<Signin />} />
           <Route path="/Register" element={<Register />} />
+          <Route path="/*" element={<NotFound />} />
+
         </Routes>
       </div>
       <Footer />

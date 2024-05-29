@@ -9,6 +9,7 @@ import Footer from "./components/Footer/Footer";
 import Attendance from "./Pages/Attendance/Attendance";
 import Lessons from "./Pages/Lessons/Lessons";
 import EditProfile from "./Pages/EditProfile/EditProfile";
+import NotFound from "./404";
 
 const App = () => {
   return (
@@ -25,6 +26,8 @@ const App = () => {
         <Route path="/Attendance" element={<Attendance />} />
         <Route path="/Lessons" element={<Lessons />} />
         <Route path="/EditProfile" element={<EditProfile />} />
+        <Route path="/*" element={<NotFound />} />
+
         
       </Routes>
       </div>

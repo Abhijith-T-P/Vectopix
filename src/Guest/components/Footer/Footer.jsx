@@ -9,16 +9,16 @@ const Footer = () => {
         <div className="Footer-Link">
           <ul>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="./about">About</Link>
             </li>
             <li>
-              <Link to="/courses">Courses</Link>
+              <Link to="./courses">Courses</Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="./contact">Contact</Link>
             </li>
             <li>
-              <Link to="/Terms&Conditions">Terms & Conditions</Link>
+              <Link to="./Terms&Conditions">Terms & Conditions</Link>
             </li>
           </ul>
         </div>

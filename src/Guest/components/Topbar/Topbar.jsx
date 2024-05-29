@@ -36,7 +36,7 @@ const Topbar = () => {
         <div className="Nav path">
           <ul>
             <li>
-              <NavLink style={navStyle} to="../">
+              <NavLink style={navStyle} to="./">
                 Home
               </NavLink>
             </li>
@@ -61,12 +61,12 @@ const Topbar = () => {
           <ul>
             <li>
               <div className="Sign-In">
-                <NavLink to="../Signin">Sign in</NavLink>
+                <NavLink to="./Signin">Sign in</NavLink>
               </div>
             </li>
             <li>
               <div className="Get-Started">
-                <NavLink to="../Register">Get started</NavLink>
+                <NavLink to="./Register">Get started</NavLink>
               </div>
             </li>
           </ul>

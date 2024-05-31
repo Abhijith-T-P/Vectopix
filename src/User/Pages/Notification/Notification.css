@@ -1,78 +1,122 @@
 
+
+.Notifications {
+  padding: 1rem;
+}
+
+.Notifications-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Notifications-Content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+}
+
+.User-Hi h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.Notifications-List {
+  display: flex;
+  flex-direction: column;
+}
+
+.Notification-Card {
+  background-color: var(--clr-0ff-white);
+  padding: 1rem;
+  border: 1px solid var(--clr-bdr);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.Notification-Card.read {
+  background-color: var(--clr-Shadow);
+}
+
+.Notification-Title h3 {
+  margin: 0;
+  color: var(--clr-text);
+}
+
+.Notification-Message p {
+  margin: 0.5rem 0;
+  color: var(--clr-text);
+}
+
+.Notification-Timestamp span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: var(--clr-text);
+  font-size: 0.8rem;
+}
+
+.Mark-As-Read-Btn {
+  background-color: var(--clr-red);
+  color: var(--clr-white);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.More-Btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.More-Btn a {
+  background-color: var(--clr-red);
+  color: var(--clr-white);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
   .Notifications {
-    padding: 1rem 7rem;
-  }
-  
-  .Notifications-Container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .Notifications-Content {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .User-Hi h2 {
-    margin-bottom: 2rem;
-  }
-  
-  .Notifications-List {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .Notification-Card {
-    background-color: var(--clr-0ff-white);
     padding: 1rem;
-    border: 1px solid var(--clr-bdr);
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
   }
-  
-  .Notification-Card.read {
-    background-color: var(--clr-Shadow);
+
+  .Notification-Card {
+    padding: 0.75rem;
   }
-  
-  .Notification-Title h3 {
-    margin: 0;
-    color: var(--clr-text);
-  }
-  
-  .Notification-Message p {
-    margin: 0.5rem 0;
-    color: var(--clr-text);
-  }
-  
+
   .Notification-Timestamp span {
-    display: block;
-    margin-top: 0.5rem;
-    font-weight: bold;
-    color: var(--clr-text);
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
-  
+
   .Mark-As-Read-Btn {
-    background-color: var(--clr-red);
-    color: var(--clr-white);
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    margin-top: 0.5rem;
+    padding: 0.4rem 0.8rem;
   }
-  
-  .More-Btn {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-  }
-  
+
   .More-Btn a {
-    background-color: var(--clr-red);
-    color: var(--clr-white);
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
+    padding: 0.4rem 0.8rem;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .User-Hi h2 {
+    font-size: 1.5rem;
+  }
+
+  .Notification-Card {
+    padding: 0.5rem;
+  }
+
+  .Mark-As-Read-Btn {
+    padding: 0.3rem 0.6rem;
+  }
+
+  .More-Btn a {
+    padding: 0.3rem 0.6rem;
+  }
+}

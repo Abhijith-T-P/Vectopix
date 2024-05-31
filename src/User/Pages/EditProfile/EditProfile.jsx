@@ -89,7 +89,7 @@ const EditProfile = () => {
               Save Changes
             </button>
             <Link to="../Profile">
-            <button className="Back-Btn">Back to prpfile</button>
+            <button className="Back-Btn">Back to profile</button>
           </Link>
             <button type="button" className="Cancel-Btn" onClick={() => console.log('Cancel Edit')}>
               Cancel

@@ -7,6 +7,8 @@ import CoursesList from "./Pages/CoursesList/CoursesList";
 import EditCourse from "./Pages/EditCourse/EditCourse";
 import NotFound from "./404";
 import AdminVerifyUsers from "./Pages/AdminVerifyUsers/AdminVerifyUsers";
+import AdminProfile from "./Pages/AdminProfile/AdminProfile";
+import EditProfile from "./Pages/EditProfile/EditProfile";
 
 const App = () => {
   return (
@@ -19,7 +21,9 @@ const App = () => {
         <Route path="/CoursesList" element={<CoursesList />} />
         <Route path="/EditCourse" element={<EditCourse />} />
         <Route path="/AdminVerifyUsers" element={<AdminVerifyUsers />} />
-
+        <Route path="/AdminProfile" element={<AdminProfile />} />
+        <Route path="/EditProfile" element={<EditProfile />} />
+        
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </div>

@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/Vectopix/static/css/main.9ec4f541.css",
+    "main.js": "/Vectopix/static/js/main.ce3c7b3f.js",
+    "static/media/why-hands-on.jpg": "/Vectopix/static/media/why-hands-on.baccab59e1bdc11b7bb6.jpg",
+    "static/media/AboutIllu1.png": "/Vectopix/static/media/AboutIllu1.b59e07589789e07beac2.png",
+    "static/media/404.jpg": "/Vectopix/static/media/404.ceac954f52b4fed65993.jpg",
+    "static/media/contact.jpg": "/Vectopix/static/media/contact.a6b20c29f5918e433961.jpg",
+    "static/media/profile-image.jpg": "/Vectopix/static/media/profile-image.70d93d67571221ddf662.jpg",
+    "static/media/Hero-Banner-1.jpg": "/Vectopix/static/media/Hero-Banner-1.356388f71f56fc3f22c7.jpg",
+    "static/media/why-121.jpg": "/Vectopix/static/media/why-121.4c53d3f803ca5d907bbb.jpg",
+    "static/media/logo_2018.png": "/Vectopix/static/media/logo_2018.41475b1f2f287bbf32ed.png",
+    "static/media/test-image-course.jpg": "/Vectopix/static/media/test-image-course.6071cda062bc9aa3ca6c.jpg",
+    "static/media/AboutIllu3.jpg": "/Vectopix/static/media/AboutIllu3.22369b670d8d7b0cc7db.jpg",
+    "static/media/AboutIllu2.png": "/Vectopix/static/media/AboutIllu2.ffbc4ecac95434de5cd6.png",
+    "static/media/Why-industry-relevant.jpg": "/Vectopix/static/media/Why-industry-relevant.3851c843462eacd85895.jpg",
+    "static/media/404.svg": "/Vectopix/static/media/404.f072d880d852156e354057b96607616b.svg",
+    "static/media/profile-circle-svgrepo-com.svg": "/Vectopix/static/media/profile-circle-svgrepo-com.517a8edfa0ee4f72ce437b6f81c3a94e.svg",
+    "index.html": "/Vectopix/index.html",
+    "static/media/stack-alt-svgrepo-com.svg": "/Vectopix/static/media/stack-alt-svgrepo-com.664e0fc7f6e57c0c9e9ce228ac6bea24.svg",
+    "static/media/4092563_bell_mobile ui_notification_icon.svg": "/Vectopix/static/media/4092563_bell_mobile ui_notification_icon.60c5a0ccddd7afa94d96a8b8123a414f.svg",
+    "main.9ec4f541.css.map": "/Vectopix/static/css/main.9ec4f541.css.map",
+    "main.ce3c7b3f.js.map": "/Vectopix/static/js/main.ce3c7b3f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ec4f541.css",
+    "static/js/main.ce3c7b3f.js"
+  ]
+}

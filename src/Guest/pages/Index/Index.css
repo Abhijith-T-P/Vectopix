@@ -38,6 +38,8 @@
 
 .Index .Hero .Hero-Text span {
   color: var(--clr-text);
+  position: relative;
+  top: 20px;
   font-size: 1.5rem;
   
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Signin.css";
 
 const Signin = () => {
@@ -40,6 +40,7 @@ const Signin = () => {
           </div>
           <button type="submit">Sign In</button>
         </form>
+        <Link to="../Admin">Admin</Link>
       </div>
     </div>
   );

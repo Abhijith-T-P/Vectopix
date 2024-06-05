@@ -1,3 +1,4 @@
+
 ## About
 
 ### Vectopix Platform
@@ -28,6 +29,10 @@
 - **Firebase**: For authentication, Firestore database, and storage solutions.
 - **React Router**: For navigation and routing within the app.
 - **CSS Modules**: For styling components and ensuring modular and maintainable CSS.
+
+### Hosting
+
+The Vectopix platform is hosted using Netlify and can be accessed at [https://vectopix.netlify.app/](https://vectopix.netlify.app/).
 
 ### Installation
 
@@ -104,3 +109,4 @@ Contributions are welcome! If you have any suggestions or improvements, please f
 ### License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+

@@ -20,6 +20,7 @@ const GuestEnquiry = () => {
       const filteredData = querySnapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
+        timestamp: new Date(doc.data().timestamp.seconds * 1000).toLocaleString() // Format timestamp
       }));
       setEnquiries(filteredData);
       setLoading(false); // Set loading to false once data is fetched
@@ -52,6 +53,9 @@ const GuestEnquiry = () => {
                       {user.contactEmail}
                     </Link>
                   </p>
+                  <Typography variant="body2">
+                    Enquiry Date: {user.timestamp}
+                  </Typography>
                 </div>
               </div>
             ))}

@@ -51,6 +51,6 @@
   
   .Signin-Container button:hover {
     /* border: 2px solid var(--clr-Shadow); */
-    scale: 102%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   }
   

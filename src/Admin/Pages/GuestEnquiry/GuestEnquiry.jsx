@@ -47,14 +47,17 @@ const GuestEnquiry = () => {
                 <div className="Enquiry-Detail">
                   <Typography variant="h4">{user.contactName}</Typography>
                   <p>
-                    Contact <br /> 
+                     
                     <Link to={`tel:${user.contactNumber}`}>{user.contactNumber}</Link> <br />
                     <Link to={`mailto:${user.contactEmail}?subject=Response to Your Enquiry at Vectopix Institute of Computer Graphics&body=Thank you for reaching out to us at Vectopix Institute of Computer Graphics. We have received your enquiry and appreciate your interest in our services.`} target="_blank">
                       {user.contactEmail}
                     </Link>
                   </p>
-                  <Typography variant="body2">
-                    Enquiry Date: {user.timestamp}
+                  <Typography>
+                    Message: {user.contactMessage}
+                  </Typography>
+                  <Typography  variant="subtitle2" style={{ textAlign: "right" ,fontSize:".7rem"}}>
+                    {user.timestamp}
                   </Typography>
                 </div>
               </div>

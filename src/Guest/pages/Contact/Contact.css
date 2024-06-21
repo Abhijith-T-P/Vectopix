@@ -48,10 +48,13 @@ textarea:focus,
   border-radius: 0.7rem;
   border: none;
   margin: 1rem;
+  min-width: 8rem;
+
 
 }
 .Contact .Contact-Container .Contact-Form .Form-Btn button:hover {
   scale: 102%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;  
 
 }
 

@@ -55,6 +55,7 @@
     text-decoration: underline;
   }
   
+  
   @media (max-width: 992px) {
     .EnquiryCard-container {
       width: calc(50% - 40px);

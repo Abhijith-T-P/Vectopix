@@ -1,15 +1,10 @@
 .GuestEnquiry {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 20px;
-    background-color: #f5f5f5;
-    min-height: 100vh;
   }
   
   .EnquiryContainer {
-    width: 90%;
     max-width: 1200px;
+    margin: 0 auto;
   }
   
   .EnquiryHeading {
@@ -20,56 +15,55 @@
   .EnquiryCards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: start;
     gap: 20px;
-    justify-content: center;
-
   }
   
   .EnquiryCard-container {
-    background-color: var(--clr-0f-white);
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
     border-radius: 10px;
-    border: 1px solid var(--clr-red);
-
-    overflow: hidden;
-    transition: transform 0.2s;
-    width: calc(100% / 3 - 20px); /* Adjust this value based on the number of cards per row */
-    max-width: 300px;
+    padding: 20px;
+    width: calc(33.333% - 40px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
   }
   
   .EnquiryCard-container:hover {
-    transform: scale(1.02);
-  }
-  
-  .Enquiry-Detail {
-    border: 1px solid var(--clr-tex);
-
-    padding: 20px;
-    text-align: center;
+    transform: translateY(-10px);
   }
   
   .Enquiry-Detail img {
-    width: 150px;
-    height: auto;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin-bottom: 10px;
   }
   
+ 
+  
   .Enquiry-Detail p {
     margin: 10px 0;
-    font-size: 16px;
-    color: #666;
   }
   
-  /* Responsive Design */
-  @media (max-width: 1024px) {
+  .Enquiry-Detail a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .Enquiry-Detail a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 992px) {
     .EnquiryCard-container {
-      width: calc(100% / 2 - 20px);
+      width: calc(50% - 40px);
     }
   }
   
   @media (max-width: 768px) {
     .EnquiryCard-container {
-      width: 100%;
+      width: calc(100% - 40px);
     }
   }
   

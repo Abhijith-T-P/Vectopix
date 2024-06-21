@@ -1,70 +1,33 @@
 import { Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./GuestEnquiry.css";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { db } from "../../../Config/Firebase";
+import { Link } from "react-router-dom";
 
 const GuestEnquiry = () => {
-  const users = [
-    {
-      picture: "https://via.placeholder.com/150",
-      name: "John Doe",
-      contact: "8965845745",
-      email: "johndoe@gmail.com"
-    },
-    {
-      picture: "https://via.placeholder.com/150",
-      name: "Jane Smith",
-      contact: "1234567890",
-      email: "janesmith@gmail.com"
-    },
-    {
-      picture: "https://via.placeholder.com/150",
-      name: "Alice Johnson",
-      contact: "0987654321",
-      email: "alicejohnson@gmail.com"
-    },
-    {
-      picture: "https://via.placeholder.com/150",
-      name: "Bob Brown",
-      contact: "1122334455",
-      email: "bobbrown@gmail.com"
-    },
-    {
-      picture: "https://via.placeholder.com/150",
-      name: "Charlie Black",
-      contact: "5566778899",
-      email: "charlieblack@gmail.com"
-    },
-    {
-      picture: "https://via.placeholder.com/150",
-      name: "Daisy Green",
-      contact: "6677889900",
-      email: "daisygreen@gmail.com"
-    },
-    {
-      picture: "https://via.placeholder.com/150",
-      name: "Ethan White",
-      contact: "7788990011",
-      email: "ethanwhite@gmail.com"
-    },
-    {
-      picture: "https://via.placeholder.com/150",
-      name: "Fiona Blue",
-      contact: "8899001122",
-      email: "fionablue@gmail.com"
-    },
-    // {
-    //   picture: "https://via.placeholder.com/150",
-    //   name: "George Red",
-    //   contact: "9900112233",
-    //   email: "georgered@gmail.com"
-    // },
-    // {
-    //   picture: "https://via.placeholder.com/150",
-    //   name: "Hannah Violet",
-    //   contact: "1011121314",
-    //   email: "hannahviolet@gmail.com"
-    // }
-  ];
+  const [enquiries, setEnquiries] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getEnquiry();
+  }, []);
+
+  const getEnquiry = async () => {
+    try {
+      const enquiryQuery = query(collection(db, "Guest_Contact"), orderBy("timestamp", "desc"));
+      const querySnapshot = await getDocs(enquiryQuery);
+      const filteredData = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      setEnquiries(filteredData);
+      setLoading(false); // Set loading to false once data is fetched
+    } catch (error) {
+      console.error(error);
+      setLoading(false); // Handle error case by setting loading to false
+    }
+  };
 
   return (
     <div className="GuestEnquiry">
@@ -72,20 +35,28 @@ const GuestEnquiry = () => {
         <div className="EnquiryHeading">
           <Typography variant="h3">Guest Enquiry</Typography>
         </div>
-        <div className="EnquiryCards">
-          {users.map((user, index) => (
-            <div className="EnquiryCard-container" key={index}>
-              <div className="Enquiry-Detail">
-               
-                <Typography variant="subtitle1">{user.name}</Typography>
-                <p>
-                  Contact <br /> {user.contact} <br />
-                  {user.email}
-                </p>
+        {loading ? (
+          <Typography variant="body1">Loading enquiries...</Typography>
+        ) : enquiries.length === 0 ? (
+          <Typography variant="body1">No enquiries found.</Typography>
+        ) : (
+          <div className="EnquiryCards">
+            {enquiries.map((user, index) => (
+              <div className="EnquiryCard-container" key={index}>
+                <div className="Enquiry-Detail">
+                  <Typography variant="h4">{user.contactName}</Typography>
+                  <p>
+                    Contact <br /> 
+                    <Link to={`tel:${user.contactNumber}`}>{user.contactNumber}</Link> <br />
+                    <Link to={`mailto:${user.contactEmail}?subject=Response to Your Enquiry at Vectopix Institute of Computer Graphics&body=Thank you for reaching out to us at Vectopix Institute of Computer Graphics. We have received your enquiry and appreciate your interest in our services.`} target="_blank">
+                      {user.contactEmail}
+                    </Link>
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

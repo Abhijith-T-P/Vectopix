@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Contact.css";
 import { Link } from "react-router-dom";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../../../Config/Firebase";
 
 const Contact = () => {
@@ -21,6 +21,8 @@ const Contact = () => {
         contactEmail,
         contactNumber,
         contactMessage,
+        timestamp: serverTimestamp(),
+
       });
       setContactName("");
       setContactNumber("");

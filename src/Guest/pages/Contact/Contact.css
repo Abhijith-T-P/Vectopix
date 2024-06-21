@@ -31,6 +31,7 @@ textarea {
   margin: 1rem;
   border: 1px solid var(--clr-bdr);
   border-radius: 0.7rem;
+  color: var(--clr-red);
 }
 .Contact .Contact-Container .Contact-Form input,
 textarea:focus,

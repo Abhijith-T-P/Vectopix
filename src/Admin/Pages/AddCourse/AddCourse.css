@@ -1,0 +1,54 @@
+.AddCourse {
+    padding: 1rem 7rem;
+  }
+  
+  .AddCourse-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0px;
+    border: 1px solid var(--clr-bdr);
+    border-radius: 0.5rem;
+  }
+  
+  .submit-btn,
+  .reset-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+  
+  .submit-btn {
+    background-color: var(--clr-red);
+    color: var(--clr-white);
+  }
+  
+  .reset-btn {
+    background-color: var(--clr-Shadow);
+    color: var(--clr-text);
+  }
+  

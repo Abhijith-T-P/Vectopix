@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './Topbar.css';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import "./Topbar.css";
 
 const Topbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,6 +9,11 @@ const Topbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const AdminnavStyle=({ isActive })=>{
+    return{
+      color: isActive?" var(--clr-text)":"var(--clr-white)",
+    }
+  }
   return (
     <header className="topbar">
       <div className="topbar-left">
@@ -17,19 +22,32 @@ const Topbar = () => {
       <button className="hamburger" onClick={handleMenuToggle}>
         <span className="hamburger-icon">&#9776;</span>
       </button>
-      <nav className={`topbar-nav ${isMenuOpen ? 'open' : ''}`}>
+      <nav className={`topbar-nav ${isMenuOpen ? "open" : ""}`}>
         <ul>
           <li>
-            <Link to="./dashboard">Dashboard</Link>
+            <NavLink to="./dashboard" style={AdminnavStyle}>
+              Dashboard
+            </NavLink>
           </li>
           <li>
-            <Link to="./UsersList">Users</Link>
+            <NavLink to="./UsersList" style={AdminnavStyle}>
+              Users
+            </NavLink>
           </li>
           <li>
-            <Link to="./CoursesList">Courses</Link>
+            <NavLink to="./GuestEnquiry" style={AdminnavStyle}>
+              Enquiries
+            </NavLink>
           </li>
           <li>
-            <Link to="./AdminProfile">Profile</Link>
+            <NavLink to="./CoursesList" style={AdminnavStyle}>
+              Courses
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="./AdminProfile" style={AdminnavStyle}>
+              Profile
+            </NavLink>
           </li>
         </ul>
       </nav>

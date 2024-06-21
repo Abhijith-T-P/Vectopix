@@ -50,6 +50,7 @@
   }
   
   .Signin-Container button:hover {
-    border: 2px solid var(--clr-Shadow);
+    /* border: 2px solid var(--clr-Shadow); */
+    scale: 102%;
   }
   

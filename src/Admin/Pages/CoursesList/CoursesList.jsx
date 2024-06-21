@@ -1,13 +1,13 @@
 // CoursesList.jsx
 import React, { useState, useEffect } from 'react';
 import './CoursesList.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const CoursesList = () => {
   const [courses, setCourses] = useState([]);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
-    // Fetch courses data from an API or a mock data source
     const mockCourses = [
       {
         id: 1,
@@ -32,11 +32,21 @@ const CoursesList = () => {
       },
     ];
     setCourses(mockCourses);
+    
   }, []);
+
+  const handleAddCourse=()=>{
+    navigate("../AddCourse");
+  }
 
   return (
     <div className="courses-list">
+      <div className="Topp">
       <h2>Computer Courses</h2>
+      <button onClick={handleAddCourse} className='Add-Course-Btn'>Add Course</button>
+
+      </div>
+
       <div className="courses-container">
         {courses.map((course) => (
           <div key={course.id} className="course-card">

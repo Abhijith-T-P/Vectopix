@@ -27,6 +27,7 @@
   display: flex;
   margin: 0;
   padding: 0;
+  padding-right: 2rem;
 }
 
 .topbar-nav ul li {
@@ -34,7 +35,7 @@
 }
 
 .topbar-nav ul li a {
-  color: var(--clr-white);
+  
   text-decoration: none;
 }
 

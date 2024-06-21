@@ -59,16 +59,20 @@ const Topbar = () => {
         </div>
         <div className="Nav Account">
           <ul>
+          <NavLink to="../Signin">
             <li>
-              <div className="Sign-In">
-                <NavLink to="../Signin">Sign in</NavLink>
+              <div className="Sign-In Rbtn">
+                Sign in
               </div>
             </li>
+            </NavLink>
+            <NavLink to="../Register">
             <li>
-              <div className="Get-Started">
-                <NavLink to="../Register">Get started</NavLink>
+              <div className="Get-Started Rbtn">
+                Get started
               </div>
             </li>
+            </NavLink>
           </ul>
         </div>
       </div>

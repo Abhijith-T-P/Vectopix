@@ -54,6 +54,14 @@
 .Topbar-Nav ul li a:active {
   color: var(--clr-red);
 }
+ul a {
+  text-decoration: none;
+}
+.Rbtn {
+  color: var(--clr-white);
+  font-size: 1rem;
+  font-weight: bold;
+}
 
 .Hamburger {
   display: none;

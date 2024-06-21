@@ -50,7 +50,7 @@ textarea:focus,
 
 }
 .Contact .Contact-Container .Contact-Form .Form-Btn button:hover {
-  border: 2px solid var(--clr-Shadow);
+  scale: 102%;
 
 }
 

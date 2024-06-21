@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import './UsersList.css';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./UsersList.css";
 
 const UsersList = () => {
   const [users, setUsers] = useState([]);
@@ -9,39 +9,39 @@ const UsersList = () => {
     const mockUsers = [
       {
         id: 1,
-        name: 'John Doe',
-        picture: 'https://via.placeholder.com/150',
-        course: 'Web Development',
+        name: "John Doe",
+        picture: "https://via.placeholder.com/150",
+        course: "Web Development",
         verified: false,
       },
       {
         id: 2,
-        name: 'Jane Smith',
-        picture: 'https://via.placeholder.com/150',
-        course: 'Graphic Design',
-        verified: false,
+        name: "Jane Smith",
+        picture: "https://via.placeholder.com/150",
+        course: "Graphic Design",
+        verified: true  ,
       },
       {
         id: 3,
-        name: 'Bob Johnson',
-        picture: 'https://via.placeholder.com/150',
-        course: 'Digital Marketing',
+        name: "Bob Johnson",
+        picture: "https://via.placeholder.com/150",
+        course: "Digital Marketing",
         verified: true,
       },
     ];
     setUsers(mockUsers);
   }, []);
 
-  const verifiedUsers = users.filter(user => user.verified);
+  const verifiedUsers = users.filter((user) => user.verified);
 
   return (
     <div className="users-list">
       <div className="header">
         <h2>Verified Users List</h2>
-        <Link to="../AdminVerifyUsers" className="admin-verify-link">
+      </div>
+      <Link to="../AdminVerifyUsers" className="admin-verify-link">
           Go to Admin Verify Users
         </Link>
-      </div>
       <div className="users-container">
         {verifiedUsers.map((user) => (
           <div key={user.id} className="user-card">

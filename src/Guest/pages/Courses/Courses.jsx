@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
@@ -9,11 +9,7 @@ const Courses = () => {
   const [courses, setCourses] = useState([]);
   const [search, setSearch] = useState("");
 
-  useEffect(() => {
-    fetchCourses();
-  }, [search]);
-
-  const fetchCourses = async () => {
+  const fetchCourses = useCallback(async () => {
     try {
       const courseRef = collection(db, "courses");
       const courseSnapshot = await getDocs(courseRef);
@@ -28,7 +24,15 @@ const Courses = () => {
     } catch (error) {
       console.error("Error fetching courses: ", error);
     }
-  };
+  }, [search]);
+
+  useEffect(() => {
+    const debounceTimer = setTimeout(() => {
+      fetchCourses();
+    }, 300); // Debounce for 300ms
+
+    return () => clearTimeout(debounceTimer);
+  }, [fetchCourses]);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -67,7 +71,7 @@ const Courses = () => {
                       <img src={course.illustration} alt="Course_Image" />
                     </div>
                     <div className="course-name">
-                    <Typography
+                      <Typography
                         variant="h4"
                         style={{ textTransform: "uppercase" }}
                       >
@@ -75,7 +79,6 @@ const Courses = () => {
                       </Typography>
                     </div>
                     <div className="Course-Detail">
-                     
                       <Typography variant="body1" className="description">
                         {course.description.split(" ").slice(0, 30).join(" ")}...
                       </Typography>

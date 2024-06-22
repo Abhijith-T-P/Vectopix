@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+ import React, { useState } from 'react';
 import { storage, db } from '../../../Config/Firebase';
 import './AddCourse.css';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
@@ -7,6 +7,7 @@ import { addDoc, collection } from 'firebase/firestore';
 const AddCourse = () => {
   const [courseName, setCourseName] = useState('');
   const [description, setDescription] = useState('');
+  const [syllabus, setSyllabus] = useState('');
   const [fee, setFee] = useState('');
   const [duration, setDuration] = useState('');
   const [illustration, setIllustration] = useState(null);
@@ -21,14 +22,16 @@ const AddCourse = () => {
       const illustrationURL = await getDownloadURL(illustrationRef);
 
       try {
+        
         await addDoc(collection(db, 'courses'), {
           courseName,
           description,
+          syllabus,
           fee,
           duration,
           illustration: illustrationURL,
         });
-        alert('Course added successfully');
+        alert(`$course added successfully`);
         handleReset();
       } catch (error) {
         console.error('Error adding course:', error);
@@ -42,6 +45,7 @@ const AddCourse = () => {
   const handleReset = () => {
     setCourseName('');
     setDescription('');
+    setSyllabus('');
     setFee('');
     setDuration('');
     setIllustration(null);
@@ -71,6 +75,16 @@ const AddCourse = () => {
               rows="4"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
+              required
+            ></textarea>
+          </div>
+          <div className="form-group">
+            <label htmlFor="syllabus">Syllabus</label>
+            <textarea
+              id="syllabus"
+              rows="4"
+              value={syllabus}
+              onChange={(e) => setSyllabus(e.target.value)}
               required
             ></textarea>
           </div>

@@ -2,22 +2,34 @@
   padding: 0px 7rem;
   margin-bottom: 3rem;
   margin-top: 4rem;
+  position: relative;
 }
-.Courses .Courses-Text h1{
+
+.Courses .Courses-Text h1 {
   color: var(--clr-red);
 }
+.Courses .Courses-Text p {
+  padding: 0.3rem 1rem;
+}
+
 .Courses .Courses-Container .Courses-Grid .Course-Card {
   background-color: var(--clr-0ff-white);
   margin: 1rem;
   padding: 1.3rem;
   border-radius: 0.7rem;
   border: 1px solid var(--clr-Shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
+
 .Courses .Courses-Container .Courses-Grid {
   margin-top: 2rem;
 }
-.Courses .Courses-Container .Courses-Search{
-    margin-top: 1rem;
+
+.Courses .Courses-Container .Courses-Search {
+  margin-top: 1rem;
 }
 
 .Courses .Courses-Container .Courses-Search input {
@@ -26,9 +38,11 @@
   padding: 0.5rem;
   border-radius: 0.7rem;
 }
+
 .Courses .Courses-Container .Courses-Search input:focus {
   outline: none;
 }
+
 .Courses .Courses-Container .Courses-Search label {
   font-size: 1.3rem;
   font-weight: 600;
@@ -39,17 +53,35 @@
   justify-content: center;
   align-items: center;
 }
+
 .Courses .Courses-Container .Courses-Grid .Course-Card .Course-Image img {
-  height: 20rem;
+  max-width: 15rem;
+  height: 15rem;
   mix-blend-mode: multiply;
 }
-.Courses .Courses-Container .Courses-Grid .Course-Card .Course-Detail h3 {
-  padding: 0.5rem 0rem;
+
+.Courses .Courses-Container .Courses-Grid .Course-Card .Course-Detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  bottom: 5px;
 }
+
+.Courses .Courses-Container .Courses-Grid .Course-Card .course-name h4 {
+  margin-top: 1rem;
+  color: var(--clr-red);
+  font-weight: 700;
+  text-align: start;
+  text-transform: uppercase;
+}
+
 .Courses .Courses-Container .Courses-Grid .Course-Card .Course-Detail p {
   text-align: justify;
   padding-bottom: 0.7rem;
+  flex: 1;
 }
+
 .Courses .Courses-Container .Courses-Grid .Course-Card .Course-Detail button {
   padding: 1rem;
   background-color: var(--clr-red);
@@ -57,6 +89,7 @@
   border: none;
   border-radius: 0.7rem;
 }
+
 .Courses
   .Courses-Container
   .Courses-Grid
@@ -64,15 +97,17 @@
   .Course-Detail
   .Know-Btn {
   display: flex;
-  flex: 1;
-  justify-content: end;
+  justify-content: flex-end;
 }
+
 /* Styles for medium screens (tablets) */
 @media screen and (max-width: 992px) {
   .Courses {
     padding: 0 4rem;
   }
-
+  .Courses .Courses-Text h1 {
+   font-size: 4rem;
+  }
   .Courses .Courses-Container .Courses-Grid .Course-Card {
     padding: 1rem;
   }
@@ -81,7 +116,7 @@
     height: 15rem;
   }
 
-  .Courses .Courses-Container .Courses-Grid .Course-Card .Course-Detail h3 {
+  .Courses .Courses-Container .Courses-Grid .Course-Card .course-name h4 {
     font-size: 1.2rem;
   }
 
@@ -100,7 +135,10 @@
   .Courses {
     padding: 0 2rem;
   }
-
+  .Courses .Courses-Text h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+   }
   .Courses .Courses-Container .Courses-Grid .Course-Card {
     padding: 0.8rem;
   }
@@ -109,7 +147,7 @@
     height: 12rem;
   }
 
-  .Courses .Courses-Container .Courses-Grid .Course-Card .Course-Detail h3 {
+  .Courses .Courses-Container .Courses-Grid .Course-Card .course-name h4 {
     font-size: 1rem;
   }
 

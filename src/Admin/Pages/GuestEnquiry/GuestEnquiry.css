@@ -1,3 +1,4 @@
+
 .GuestEnquiry {
     padding: 20px;
   }
@@ -20,8 +21,8 @@
   }
   
   .EnquiryCard-container {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: var(--clr-off-white);
+    border: 1px solid var(--clr-bdr);
     border-radius: 10px;
     padding: 20px;
     width: calc(33.333% - 40px);
@@ -43,6 +44,7 @@
   
   .Enquiry-Detail p {
     margin: 10px 0;
+    color: var(--clr-text);
   }
   
   .Enquiry-Detail a {
@@ -73,4 +75,3 @@
       width: calc(100% - 40px);
     }
   }
-  

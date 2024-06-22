@@ -9,11 +9,11 @@ const Topbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const AdminnavStyle=({ isActive })=>{
-    return{
-      color: isActive?" var(--clr-text)":"var(--clr-white)",
-    }
-  }
+  const AdminnavStyle = ({ isActive }) => {
+    return {
+      color: isActive ? " var(--clr-text)" : "var(--clr-white)",
+    };
+  };
   return (
     <header className="topbar">
       <div className="topbar-left">
@@ -27,6 +27,11 @@ const Topbar = () => {
           <li>
             <NavLink to="./dashboard" style={AdminnavStyle}>
               Dashboard
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/" style={AdminnavStyle}>
+              Log out
             </NavLink>
           </li>
           <li>

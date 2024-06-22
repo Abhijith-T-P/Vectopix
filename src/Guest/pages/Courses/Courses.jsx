@@ -94,7 +94,7 @@ const Courses = () => {
               ))
             ) : (
               <Typography variant="body1">
-                No courses available at the moment.
+              courses not available at the moment.
               </Typography>
             )}
           </Grid>

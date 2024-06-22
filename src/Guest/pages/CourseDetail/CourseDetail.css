@@ -1,0 +1,122 @@
+.CourseDetail {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.CourseDetail .BackToCourse-btn {
+  display: flex;
+}
+
+.CourseDetail .BackToCourse-btn a {
+  display: flex;
+  background-color: var(--clr-red);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--clr-white);
+  font-weight: bold;
+}
+
+.CourseDetail-Image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.CourseDetail-Image img {
+  max-height: 30rem;
+  max-width: 100%;
+  mix-blend-mode: color-burn;
+  padding: 10px;
+}
+
+.CourseDetail-Content {
+  text-align: left;
+  line-height: 1rem;
+}
+
+.CourseDetail-Title h2 {
+  letter-spacing: 0em;
+  text-align: left;
+  font-weight: 500;
+  position: relative;
+  right: 1.5rem;
+}
+
+.CourseDetail-Content h5 {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  color: var(--clr-red);
+}
+
+.CourseDetail-Title {
+  color: var(--clr-red);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.CourseDetail-Description {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.CourseDetail-Syllabus {
+  list-style-type: disc;
+  color: var(--clr-text);
+  padding-left: 2.3rem;
+  line-height: 1.3rem;
+}
+
+.CourseDetail-Syllabus li {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+/* Styles for the General Information section */
+.General-Info {
+  margin-top: 2rem;
+  font-style: italic;
+  color: #555;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .CourseDetail {
+    padding: 1rem;
+  }
+
+  .CourseDetail-Title {
+    font-size: 1.5rem;
+  }
+
+  .CourseDetail-Image img {
+    max-height: 20rem;
+  }
+
+  .General-Info {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .CourseDetail-Title {
+    font-size: 1.2rem;
+  }
+
+  .CourseDetail-Image img {
+    max-height: 15rem;
+  }
+
+  .CourseDetail-Syllabus {
+    padding-left: 1rem;
+  }
+
+  .General-Info {
+    font-size: 0.9rem;
+  }
+}

@@ -80,10 +80,11 @@ const Courses = () => {
                     </div>
                     <div className="Course-Detail">
                       <Typography variant="body1" className="description">
-                        {course.description.split(" ").slice(0, 30).join(" ")}...
+                        {course.description.split(" ").slice(0, 30).join(" ")}
+                        ...
                       </Typography>
                       <div className="Know-Btn">
-                        <Link to={`/course/${course.id}`}>
+                        <Link to={`/courses/${course.id}`}>
                           <button>Know more</button>
                         </Link>
                       </div>

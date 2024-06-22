@@ -10,6 +10,7 @@ import TermsAndConditions from "./pages/TermsAndConditions/TermsAndConditions";
 import Signin from "./pages/Signin/Signin";
 import Register from "./pages/Register/Register";
 import NotFound from "../404";
+import CourseDetail from "./pages/CourseDetail/CourseDetail";
 
 const App = () => {
   return (
@@ -18,14 +19,14 @@ const App = () => {
       <div className="App-Content">
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="/Courses" element={<Courses />} />
-          <Route path="/Terms&Conditions" element={<TermsAndConditions />} />
-          <Route path="/Signin" element={<Signin />} />
-          <Route path="/Register" element={<Register />} />
-          <Route path="/*" element={<NotFound />} />
-
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/courses/:courseId" element={<CourseDetail />} />
+          <Route path="/terms-conditions" element={<TermsAndConditions />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       <Footer />

@@ -53,8 +53,8 @@ const CourseDetail = () => {
         </ul>
         <div className="General-Info">
           <Typography variant="body1">
-           For more details, please <Link to = "/contact">contact</Link\> our administration office.
-          </Typography>\
+            For more details, please <Link to="/contact">contact</Link> our administration office.
+          </Typography>
         </div>
       </div>
     </div>

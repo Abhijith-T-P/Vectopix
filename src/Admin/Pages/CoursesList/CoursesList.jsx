@@ -1,60 +1,51 @@
 // CoursesList.jsx
-import React, { useState, useEffect } from 'react';
-import './CoursesList.css';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import "./CoursesList.css";
+import { Link, useNavigate } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../../Config/Firebase";
 
 const CoursesList = () => {
   const [courses, setCourses] = useState([]);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const mockCourses = [
-      {
-        id: 1,
-        image: 'https://via.placeholder.com/150',
-        name: 'Web Development Bootcamp',
-        duration: '3 months',
-        fee: 499.99,
-      },
-      {
-        id: 2,
-        image: 'https://via.placeholder.com/150',
-        name: 'Python for Data Science',
-        duration: '6 weeks',
-        fee: 299.99,
-      },
-      {
-        id: 3,
-        image: 'https://via.placeholder.com/150',
-        name: 'Cyber Security Fundamentals',
-        duration: '2 months',
-        fee: 399.99,
-      },
-    ];
-    setCourses(mockCourses);
-    
-  }, []);
+  const allCourse = async () => {
+    const coursedb = collection(db, "courses");
+    const CoursesList = await getDocs(coursedb);
+    const filteredCourses = CoursesList.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+    }));
+    console.log(filteredCourses);
+    setCourses(filteredCourses);
+  };
+  useEffect(()=>{
+    allCourse();
+  },[]);
 
-  const handleAddCourse=()=>{
+  const handleAddCourse = () => {
     navigate("../AddCourse");
-  }
+  };
 
   return (
     <div className="courses-list">
       <div className="Topp">
-      <h2>Computer Courses</h2>
-      <button onClick={handleAddCourse} className='Add-Course-Btn'>Add Course</button>
-
+        <h2>Computer Courses</h2>
+        <button onClick={handleAddCourse} className="Add-Course-Btn">
+          Add Course
+        </button>
       </div>
 
       <div className="courses-container">
         {courses.map((course) => (
           <div key={course.id} className="course-card">
-            <img src={course.image} alt={course.name} />
+            <img src={course.illustration} alt={course.illustration} />
             <h3>{course.name}</h3>
             <p>Duration: {course.duration}</p>
-            <p>Fee: ${course.fee}</p>
-            <button><Link to="../EditCourse" >Edit</Link></button>
+            <p>Fee: {course.fee}/-</p>
+            <button>
+              <Link to={`../EditCourse/${course.id}`}>Edit</Link>
+            </button>
           </div>
         ))}
       </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, CircularProgress } from "@mui/material";
 import { Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../Config/Firebase";
@@ -8,8 +8,10 @@ import "./Courses.css";
 const Courses = () => {
   const [courses, setCourses] = useState([]);
   const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const fetchCourses = useCallback(async () => {
+    setLoading(true);
     try {
       const courseRef = collection(db, "courses");
       const courseSnapshot = await getDocs(courseRef);
@@ -23,6 +25,8 @@ const Courses = () => {
       setCourses(filteredCourses);
     } catch (error) {
       console.error("Error fetching courses: ", error);
+    } finally {
+      setLoading(false);
     }
   }, [search]);
 
@@ -62,42 +66,46 @@ const Courses = () => {
           />
         </div>
         <div className="Courses-Grid">
-          <Grid container spacing={2}>
-            {courses.length > 0 ? (
-              courses.map((course) => (
-                <Grid item xs={12} md={6} lg={4} key={course.id}>
-                  <div className="Course-Card">
-                    <div className="Course-Image">
-                      <img src={course.illustration} alt="Course_Image" />
-                    </div>
-                    <div className="course-name">
-                      <Typography
-                        variant="h4"
-                        style={{ textTransform: "uppercase" }}
-                      >
-                        {course.courseName}
-                      </Typography>
-                    </div>
-                    <div className="Course-Detail">
-                      <Typography variant="body1" className="description">
-                        {course.description.split(" ").slice(0, 30).join(" ")}
-                        ...
-                      </Typography>
-                      <div className="Know-Btn">
-                        <Link to={`/courses/${course.id}`}>
-                          <button>Know more</button>
-                        </Link>
+          {loading ? (
+            <CircularProgress />
+          ) : (
+            <Grid container spacing={2}>
+              {courses.length > 0 ? (
+                courses.map((course) => (
+                  <Grid item xs={12} md={6} lg={4} key={course.id}>
+                    <div className="Course-Card">
+                      <div className="Course-Image">
+                        <img src={course.illustration} alt="Course_Image" />
+                      </div>
+                      <div className="course-name">
+                        <Typography
+                          variant="h4"
+                          style={{ textTransform: "uppercase" }}
+                        >
+                          {course.courseName}
+                        </Typography>
+                      </div>
+                      <div className="Course-Detail">
+                        <Typography variant="body1" className="description">
+                          {course.description.split(" ").slice(0, 30).join(" ")}
+                          ...
+                        </Typography>
+                        <div className="Know-Btn">
+                          <Link to={`/courses/${course.id}`}>
+                            <button>Know more</button>
+                          </Link>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Grid>
-              ))
-            ) : (
-              <Typography variant="body1">
-              courses not available at the moment.
-              </Typography>
-            )}
-          </Grid>
+                  </Grid>
+                ))
+              ) : (
+                <Typography variant="body1">
+                  Courses not available at the moment.
+                </Typography>
+              )}
+            </Grid>
+          )}
         </div>
       </div>
     </div>

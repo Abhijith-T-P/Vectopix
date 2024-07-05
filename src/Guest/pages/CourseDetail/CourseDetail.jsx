@@ -44,10 +44,10 @@ const CourseDetail = () => {
       <div className="CourseDetail-Content">
         <Typography variant="body1" className="CourseDetail-Description">{course.description}</Typography>
         <Typography variant="h5">Duration: <span>{course.duration} months</span></Typography>
-        <Typography variant="h5">Fee: <span>{course.fee}</span></Typography>
+        <Typography variant="h5">Fee: <span>{course.fee}/-</span></Typography>
         <Typography variant="h5">Syllabus:</Typography>
         <ul className="CourseDetail-Syllabus">
-          {course.syllabus.split(", ").map((item, index) => (
+          {course.syllabus.split(",").map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </ul>

@@ -1,13 +1,17 @@
-import { Typography } from "@mui/material";
+import { Typography, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
+import DeleteIcon from '@mui/icons-material/Delete';
 import React, { useEffect, useState } from "react";
 import "./GuestEnquiry.css";
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { collection, getDocs, query, orderBy, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../../../Config/Firebase";
 import { Link } from "react-router-dom";
+
 
 const GuestEnquiry = () => {
   const [enquiries, setEnquiries] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [open, setOpen] = useState(false);
+  const [selectedEnquiry, setSelectedEnquiry] = useState(null);
 
   useEffect(() => {
     getEnquiry();
@@ -27,6 +31,26 @@ const GuestEnquiry = () => {
     } catch (error) {
       console.error(error);
       setLoading(false); // Handle error case by setting loading to false
+    }
+  };
+
+  const handleDeleteClick = (enquiry) => {
+    setSelectedEnquiry(enquiry);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setSelectedEnquiry(null);
+  };
+
+  const handleDeleteConfirm = async () => {
+    try {
+      await deleteDoc(doc(db, "Guest_Contact", selectedEnquiry.id));
+      setEnquiries(enquiries.filter(enquiry => enquiry.id !== selectedEnquiry.id));
+      handleClose();
+    } catch (error) {
+      console.error("Error deleting enquiry: ", error);
     }
   };
 
@@ -58,12 +82,37 @@ const GuestEnquiry = () => {
                   <Typography variant="subtitle2" className="Timestamp">
                     {user.timestamp}
                   </Typography>
+                  <Button variant="contained" color="error" startIcon={<DeleteIcon />} onClick={() => handleDeleteClick(user)}>
+                    Delete
+                  </Button>
                 </div>
               </div>
             ))}
           </div>
         )}
       </div>
+
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">{"Confirm Delete"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Are you sure you want to delete this enquiry?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="info">
+            Cancel
+          </Button>
+          <Button onClick={handleDeleteConfirm} color="error" autoFocus>
+            Delete
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };

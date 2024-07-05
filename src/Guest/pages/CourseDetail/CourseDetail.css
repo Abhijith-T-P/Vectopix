@@ -30,7 +30,7 @@
 .CourseDetail-Image img {
   max-height: 30rem;
   max-width: 100%;
-  mix-blend-mode: color-burn;
+  mix-blend-mode: darken;
   padding: 10px;
 }
 

@@ -1,40 +1,80 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Register.css";
+import { addDoc, collection } from "@firebase/firestore";
+import { db } from "../../../Config/Firebase";
 
 const Register = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    mobile: "",
-    confirmPassword: "",
-  });
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordMatchError, setPasswordMatchError] = useState(false);
   const [mobileError, setMobileError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-
-    if (e.target.name === "mobile") {
-      const mobile = e.target.value;
-      setMobileError(mobile.length !== 10 || !/^\d+$/.test(mobile));
+    const { name, value } = e.target;
+    
+    switch (name) {
+      case "username":
+        setUsername(value);
+        break;
+      case "email":
+        setEmail(value);
+        break;
+      case "mobile":
+        setMobile(value);
+        setMobileError(value.length !== 10 || !/^\d+$/.test(value));
+        break;
+      case "password":
+        setPassword(value);
+        break;
+      case "confirmPassword":
+        setConfirmPassword(value);
+        break;
+      default:
+        break;
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
+    if (password !== confirmPassword) {
       setPasswordMatchError(true);
+      return;
     } else {
       setPasswordMatchError(false);
     }
 
-    if (!mobileError && formData.password === formData.confirmPassword) {
-      console.log("Username:", formData.username);
-      console.log("Email:", formData.email);
-      console.log("Mobile:", formData.mobile);
-      console.log("Password:", formData.password);
-      // Further code to handle form submission, e.g., sending data to backend
+    if (!mobileError && password === confirmPassword) {
+      setLoading(true);
+      try {
+        const userdb = collection(db, "Student_Data");
+        await addDoc(userdb, {
+          username,
+          email,
+          mobile,
+          password, // Ensure that you hash the password in a real application
+        });
+        console.log("User registered successfully");
+
+        // Reset form fields
+        setUsername("");
+        setEmail("");
+        setPassword("");
+        setMobile("");
+        setConfirmPassword("");
+
+        // Redirect to login
+        navigate("../Signin");
+      } catch (error) {
+        console.error("Error adding document: ", error);
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -47,7 +87,7 @@ const Register = () => {
             <input
               type="text"
               name="username"
-              value={formData.username}
+              value={username}
               onChange={handleChange}
               required
               placeholder="Username"
@@ -57,7 +97,7 @@ const Register = () => {
             <input
               type="email"
               name="email"
-              value={formData.email}
+              value={email}
               onChange={handleChange}
               required
               placeholder="Email"
@@ -67,7 +107,7 @@ const Register = () => {
             <input
               type="text"
               name="mobile"
-              value={formData.mobile}
+              value={mobile}
               onChange={handleChange}
               required
               placeholder="0123456789"
@@ -80,7 +120,7 @@ const Register = () => {
             <input
               type="password"
               name="password"
-              value={formData.password}
+              value={password}
               onChange={handleChange}
               required
               placeholder="Password"
@@ -90,7 +130,7 @@ const Register = () => {
             <input
               type="password"
               name="confirmPassword"
-              value={formData.confirmPassword}
+              value={confirmPassword}
               onChange={handleChange}
               required
               placeholder="Confirm Password"
@@ -99,7 +139,9 @@ const Register = () => {
               <span className="error-message">Passwords do not match</span>
             )}
           </div>
-          <button type="submit">Register</button>
+          <button type="submit" disabled={loading}>
+            {loading ? "Registering..." : "Register"}
+          </button>
         </form>
       </div>
     </div>

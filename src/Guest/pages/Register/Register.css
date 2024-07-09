@@ -3,8 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 70vh;
-  height: 70vh;
+  height: 100vh;
   background-color: var(--clr-off-white);
 }
 
@@ -41,11 +40,16 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+
+    background-color: var(--clr-red);
+  
+    &:hover {
+      background-color: #c21010;
+    }
+  
 }
 
-button:hover {
-  background-color: darken(var(--clr-red));
-}
+
 
 .error-message {
   color: var(--clr-red);

@@ -1,5 +1,3 @@
-// Register.jsx
-
 import React, { useState } from "react";
 import "./Register.css";
 
@@ -8,13 +6,19 @@ const Register = () => {
     username: "",
     email: "",
     password: "",
+    mobile: "",
     confirmPassword: "",
   });
   const [passwordMatchError, setPasswordMatchError] = useState(false);
+  const [mobileError, setMobileError] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+    if (e.target.name === "mobile") {
+      const mobile = e.target.value;
+      setMobileError(mobile.length !== 10 || !/^\d+$/.test(mobile));
+    }
   };
 
   const handleSubmit = (e) => {
@@ -23,7 +27,14 @@ const Register = () => {
       setPasswordMatchError(true);
     } else {
       setPasswordMatchError(false);
-      // Handle form submission logic here
+    }
+
+    if (!mobileError && formData.password === formData.confirmPassword) {
+      console.log("Username:", formData.username);
+      console.log("Email:", formData.email);
+      console.log("Mobile:", formData.mobile);
+      console.log("Password:", formData.password);
+      // Further code to handle form submission, e.g., sending data to backend
     }
   };
 
@@ -51,6 +62,19 @@ const Register = () => {
               required
               placeholder="Email"
             />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              name="mobile"
+              value={formData.mobile}
+              onChange={handleChange}
+              required
+              placeholder="0123456789"
+            />
+            {mobileError && (
+              <span className="error-message"> must be exactly 10 digits</span>
+            )}
           </div>
           <div className="form-group">
             <input
